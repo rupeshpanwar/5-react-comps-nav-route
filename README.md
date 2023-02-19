@@ -72,3 +72,6 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 npm i prop-types
 
 
+# install tailwind for css , follow below instruction to install
+https://tailwindcss.com/docs/guides/create-react-app
+

@@ -76,3 +76,5 @@ npm i prop-types
 https://tailwindcss.com/docs/guides/create-react-app
 
 # npm i classnames
+
+# npm i react-icons

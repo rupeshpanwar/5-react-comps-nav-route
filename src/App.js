@@ -1,7 +1,12 @@
 import Dropdown from './components/Dropdown';
 
 function App() {
-  return <Dropdown />;
+  const items = [
+    {label: 'Red', value: 'red'},
+    {label: 'Green', value: 'green'},
+    {label: 'Blue', value: 'blue'},
+  ]
+  return <Dropdown items={items}/>;
 }
 
 export default App;

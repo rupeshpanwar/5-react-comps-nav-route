@@ -4,8 +4,14 @@ function Dropdown({ items }) {
     
     const [isOpen, setIsOpen] = useState(false);
 
+    const handleOptionClick = (item) => {
+        setIsOpen(false)
+
+        console.log(item)
+    }
+
     const renderedItems = items.map((item, index) => (
-      <div key={index}>{item.label}</div>
+      <div onClick={() => handleOptionClick(item)} key={index}>{item.label}</div>
     ));
   
     const handleClick = () => {

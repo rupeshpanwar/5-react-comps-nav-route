@@ -1,4 +1,4 @@
-import  { useState } from 'react';
+import  { useState, useEffect } from 'react';
 import Panel from './Panel'
 import {GoChevronDown} from 'react-icons/go'
 
@@ -20,10 +20,18 @@ function Dropdown({ items, value, onChange }) {
         setIsOpen(!isOpen);
     };
 
-    // let content = 'Select...'
-    // if(selection){
-    //     content = selection.label
-    // }
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (!event.target.closest(".w-48")) {
+                setIsOpen(false);
+            }
+        };
+        document.addEventListener("click", handleClickOutside);
+
+        return () => {
+            document.removeEventListener("click", handleClickOutside);
+        };
+    }, []);
 
    return (
   <div className='w-48 relative'>

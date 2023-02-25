@@ -1,13 +1,13 @@
 import  { useState } from 'react';
 
-function Dropdown({ items }) {
+function Dropdown({ items, selection, onSelect }) {
     
     const [isOpen, setIsOpen] = useState(false);
 
     const handleOptionClick = (item) => {
         setIsOpen(false)
 
-        console.log(item)
+        onSelect(item)
     }
 
     const renderedItems = items.map((item, index) => (
@@ -18,9 +18,14 @@ function Dropdown({ items }) {
         setIsOpen(!isOpen);
     };
 
+    let content = 'Select...'
+    if(selection){
+        content = selection.label
+    }
+
    return (
   <div>
-    <div onClick={handleClick}>Select...</div>
+    <div onClick={handleClick}>{content}</div>
     {isOpen && <div>{renderedItems}</div>}
   </div>
     );
